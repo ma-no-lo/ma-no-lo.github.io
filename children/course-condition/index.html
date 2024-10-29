@@ -1,0 +1,226 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>本月课程情况</title>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" href="./css/mycss.css">
+<script src="js/jquery-3.2.0.min.js" charset="utf-8" type="text/javascript"></script>
+<script src="js/echarts.min.js" charset="utf-8" type="text/javascript"></script>
+<script src="js/utils.js" charset="utf-8" type="text/javascript"></script>
+
+<body>
+    <div class="wpbox">
+        <div class="bnt">
+            <div class="topbnt_left fl">
+                <ul>
+                    <!-- <li class="active"><a href="https://gitee.com/iGaoWei/big-data-view">警情警力</a></li> -->
+                    <li id="back"><a href="#">返回</a></li>
+                </ul>
+            </div>
+            <h1 class="tith1 fl">本月课程情况</h1>
+            
+        </div>
+        <!-- bnt end -->
+        <div class="left1">
+            <div class="aleftboxttop">
+                <h2 class="tith2">课程情况</h2>
+                <div class="lefttoday_tit" style=" height:8%">
+                    <p class="fl">教室：3-312</p>
+                    <p class="fr">时间段：2024-10月</p>
+                </div>
+                <div class="lefttoday_number">
+                    <div class="info">
+                        <span class="status">正在上课</span>
+                        <div class="detail">
+                            <span>课程名称:<span class="name">近代史</span></span>
+                            <span>主讲人:<span class="instructor">徐建</span></span>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- lefttoday_number end -->
+            </div>
+            <div class="aleftboxtmidd">
+                <h2 class="tith2">主讲人</h2>
+                
+                
+            </div>
+            <div class="aleftboxtbott">
+                <h2 class="tith2">注意力分布图</h2>
+                <div class="lefttoday_tit height">
+                    <p class="fl">教室：3-312</p>
+                    <p class="fr">时间段：2024-10月</p>
+                </div>
+                <div id="aleftboxtbott" class="aleftboxtbott_cont"></div>
+            </div>
+        </div>
+        <!--  left1 end -->
+        <div class="mrbox">
+            <div class="mrbox_topmidd" style="width: 69%;">
+                <div class="amiddboxttop">
+                    <h2 class="tith2 pt1">3-312</h2>
+                    <div class="amiddboxttop_map" >
+                        <span class="camera_l" style=" top:34%;left:32%"></span>
+                        <span class="camera_l" style=" top:10%;left:10%"></span>
+                        <span class="camera_l" style=" top:5%;left:40%"></span>
+                        <span class="camera_l" style=" top:10%;left:50%"></span>
+                        <span style=" top:30%;left:75%"></span>
+                        <span style=" top:5%;left:92%"></span>
+                        <span style=" top:40%;left:83%"></span>
+                    </div>
+                </div>
+                <!--  amiddboxttop end-->
+                <div class="amidd_bott">
+                    <div class="amiddboxtbott1 fl">
+                        <h2 class="tith2 pt1">行为分析</h2>
+                        <div id="amiddboxtbott1" class="amiddboxtbott1content"></div>
+                    </div>
+
+                    <div class="amiddboxtbott2 fl">
+                        <h2 class="tith2 pt1">缺勤率</h2>
+                        <div id="amiddboxtbott2" class="amiddboxtbott2content"></div>
+                    </div>
+                </div>
+                <!-- amidd_bott end -->
+            </div>
+            <!-- mrbox_top end -->
+            <div class="mrbox_top_right">
+                <div class="arightboxtop">
+                    <h2 class="tith2">智慧教室</h2>
+                    <div class="lefttoday_tit">
+                        <p class="fl">教室:3-312</p>
+                        <p class="fr">时间段：2024-10-26</p>
+                    </div>
+                    <div class="zhtc_table_title">
+                        <div>姓名</div>
+                        <!-- 姓名 -->
+                        <div>进/出教室时间</div>
+                        <!-- 进教室时间 -->
+                        <div>头像</div>
+                        <!-- 头像 -->
+                        <div>班级</div>
+                        <!-- 班级 -->
+                    </div>
+                    <div id="zhtc_table" class="left2_table">
+                        <ul>
+                            <li>
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li class="bg">
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li>
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li class="bg">
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li>
+                               
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li class="bg">
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li>
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li class="bg">
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+                            <li>
+                                
+                                <div class="zhtc_table_li_content">
+                                    <div>XXX</div>
+                                    <div>2024-10-26 <br/> 9:32.am</div>
+                                    <div><img width="80" src="img/carLicensePlate/琼A180Q8.jpg" /></div>
+                                    <div>智科2302</div>
+                                </div>
+                            </li>
+
+
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="arightboxbott">
+                    <h2 class="tith2 ">教室目前信息</h2>
+                    <div class="lefttoday_tit">
+                        <p class="fl">教室：3-312</p>
+                        <p class="fr">时间段：2024-10</p>
+                    </div>
+                    <div id="arightboxbott" class="arightboxbottcont"></div>
+                </div>
+            </div>
+            <!-- mrbox_top_right end -->
+        </div>
+
+    </div>
+    </div>
+
+    <script type="text/javascript" src="js/安防设备.js"></script>
+
+    <script type="text/javascript" src="js/水电费用.js"></script>
+
+    <script type="text/javascript" src="js/社区电商.js"></script>
+
+    <script type="text/javascript" src="js/智慧物业.js"></script>
+
+    <script type="text/javascript" src="js/小区信息.js"></script>
+
+    <script type="text/javascript" src="js/moment.min.js"></script>
+    <script type="text/javascript" src="js/智慧停车.js"></script>
+    <script>
+      $("#back").click(() => {
+        history.back();
+      });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据可视化</title>
+  </head>
+  <link rel="stylesheet" href="css/index.css" />
+  <style>
+    .button{
+       height: 30px;
+        width: 50px;
+        background-color:#3190e1;
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        position: absolute;
+        top: 10px;
+        left: 20px;
+        font-size: 15px;
+    }
+  </style>
+  <body>
+    <!-- header -->
+    <header>
+      <div class="button" id="back">返回</div>
+      <h1>毕业生去向</h1>
+      <div class="showTime">2024-10-21</div>
+    </header>
+
+    <!-- main -->
+    <section class="mainbox">
+      <div class="column">
+        <div class="panel bar">
+          <h2>就业率</h2>
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel line">
+          <h2>行业分布</h2><span class="shift" id="shift-occupation">切换</span>
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel pie">
+          <h2>薪酬分布</h2>
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+      </div>
+      <div class="column">
+        <!-- 基本信息 -->
+         <div class="no">
+          <div class="no-hd">
+            <ul>
+              <li>981</li>
+              <li>59.2%</li>
+            </ul>
+          </div>
+          <div class="no-bd">
+            <ul>
+              <li>就业数量</li>
+              <li>就业率</li>
+            </ul>
+          </div>
+         </div>
+         <!-- 地域分布 -->
+         <div class="map">
+          <div class="map1"></div>
+          <div class="map2"></div>
+          <div class="map3"></div>
+          <div class="chart"></div>
+         </div>
+      </div>
+      <div class="column">
+        <div class="panel horizontal-bar">
+          <h2>深造</h2>
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        <div class="panel cloud">
+          <h2>未就业情况</h2>
+          <div class="chart">图表</div>
+          <div class="panel-footer"></div>
+        </div>
+        
+      </div>
+      </div>
+    </section>
+    
+    <script src="js/flexible.js"></script>
+    <script src="js/jquery.js" ></script>
+    <script src="js/echarts.min.js"></script>
+    <script src="js/china.js"></script>
+    <script src="js/echarts-wordcloud.min.js"></script>
+    <script src="js/my-charts.js" type="module"></script>
+    <script>
+      $("#back").click(() => {
+        history.back();
+      });
+    </script>
+    
+    
+  </body>
+</html>

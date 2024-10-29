@@ -1,0 +1,31 @@
+.info .status {
+  color: rgb(165, 255, 165);
+  font-size: 30px;
+  font-weight: 700;
+  border: 2px solid whitesmoke;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.info {
+  padding-top: 15%;
+}
+
+.info .detail {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  padding-top: 30px;
+}
+
+.info .detail span {
+  padding-bottom: 10px;
+}
+
+.info .detail .name {
+  padding-left: 10px;
+}
+
+.info .detail .instructor {
+  padding-left: 10px;
+}

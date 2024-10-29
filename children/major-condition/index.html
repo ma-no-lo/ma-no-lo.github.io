@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>专业就读情况</title>
+    <!--设置是否为缩放模式 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- 新 Bootstrap 核心 CSS 文件 -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css"
+    />
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--echarts JS-->
+    <script src="js/echarts.min.js"></script>
+    <!-- 轮播swiper文件 -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <script src="js/swiper.min.js"></script>
+    <!--界面样式-->
+    <!-- <script src="js/visual.js"></script> -->
+    <script src="js/china.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/visual.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+  </head>
+  <style></style>
+  <body class="ksh">
+    <div id="load">
+      <div class="load_img">
+        <!-- 加载动画 -->
+        <img class="jzxz1" src="images/jzxz1.png" />
+        <img class="jzxz2" src="images/jzxz2.png" />
+      </div>
+    </div>
+
+    <div class="visual">
+      <div class="button" id="back" style="background-color: #125a97">返回</div>
+      <div class="visual_left">
+        <div class="visual_box">
+          <div class="visual_title">
+            <span>院系就读人数</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="visual_chart" id="main1"></div>
+        </div>
+        <div class="visual_box">
+          <div class="visual_title">
+            <span>缺勤率</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="visual_chart" id="main2"></div>
+        </div>
+        <div class="visual_box">
+          <div class="visual_title">
+            <span>学生增长率</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="visual_chart sfzcll" id="increment"></div>
+        </div>
+      </div>
+      <div class="visual_con">
+        <div class="visual_conTop">
+          <div class="visual_conTop_box visual_conTop2">
+            <div>
+              <h3>院总人数</h3>
+              <p>1008</p>
+            </div>
+          </div>
+          <div class="visual_conTop_box visual_conTop2">
+            <div>
+              <h3>优势专业</h3>
+              <p>xxxx</p>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="visual_conBot">
+          <img class="visual_conBot_l" src="images/ksh42.png" />
+          <img class="visual_conBot_2" src="images/ksh43.png" />
+          <img class="visual_conBot_3" src="images/ksh44.png" />
+          <img class="visual_conBot_4" src="images/ksh45.png" />
+          <div class="visual_chart_text">
+            <h1>生源分布</h1>
+          </div>
+          <div class="visual_chart" id="main8"></div>
+          <div class="visual_conBot_bot">
+            <div class="visualSssf_left">
+              <h3>院系热点</h3>
+              <a>量子通信技术取得突破,安全传输速度提升十倍</a>
+              <a>工信部发布新版《电信业务管理办法》强化网络安全</a>
+              <a>智慧城市项目启动,5G网络助力城市智能化管理</a>
+              <a>通信行业报告预测：未来十年物联网设备将超过百亿台</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="visual_right">
+        <div class="visual_box">
+          <div class="visual_title">
+            <span>院系指标</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="swiper-container visual_swiper1 visual_chart">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" id="main3"></div>
+              <div class="swiper-slide" id="main31"></div>
+            </div>
+          </div>
+        </div>
+        <div class="visual_box visualSfzsfl">
+          <div class="visual_title">
+            <span>院系趋势</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="visual_chart" id="main9"></div>
+        </div>
+        <div class="visual_box">
+          <div class="visual_title">
+            <span>院系信息</span>
+            <img src="images/ksh33.png" />
+          </div>
+          <div class="swiper-container visual_swiper2 visual_chart">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" id="main4"></div>
+              <div class="swiper-slide" id="main41"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script type="text/javascript">
+      $(function () {
+        var a = $(".visualSssf_left a");
+        for (var i = 0; i < a.length; i++) {
+          a[i].index = i;
+          a[i].onclick = function () {
+            for (var i = 0; i < a.length; i++) {
+              a[i].className = "";
+            }
+            this.className = "active";
+          };
+        }
+
+        var sfzcllH = $(".sfzcll_box").height();
+        var sfzcllHtwo = sfzcllH - 2;
+        $(".sfzcll_box").css("line-height", sfzcllH + "px");
+        $(".sfzcll_smallBk>div").css("line-height", sfzcllHtwo + "px");
+
+        //删除加载动画
+        $("#load").fadeOut(1000);
+        setTimeout(function () {
+          $("#load").remove();
+        }, 1100);
+      });
+
+      var mySwiper1 = new Swiper(".visual_swiper1", {
+        autoplay: true, //可选选项，自动滑动
+        speed: 800, //可选选项，滑动速度
+        autoplay: {
+          delay: 5000, //1秒切换一次
+        },
+      });
+      //收费站收费排行
+      // var myChart4 = echarts.init(document.getElementById('main4'));
+      //   myChart4.setOption(option4);
+      //   var myChart41 = echarts.init(document.getElementById('main41'));
+      //   myChart41.setOption(option41);
+      //   var mySwiper2 = new Swiper('.visual_swiper2', {
+      // 	autoplay: true,//可选选项，自动滑动
+      // 	direction : 'vertical',//可选选项，滑动方向
+      // 	speed:2000,//可选选项，滑动速度
+      // })
+      //今日实时收费
+      // var myChart5 = echarts.init(document.getElementById('main5'));
+      //   myChart5.setOption(option5);
+      //   var myChart6 = echarts.init(document.getElementById('main6'));
+      //   myChart6.setOption(option6);
+      //   var myChart7 = echarts.init(document.getElementById('main7'));
+      //   myChart7.setOption(option7);
+      // var myChart9 = echarts.init(document.getElementById('main9'));
+      //   myChart9.setOption(option9);
+    </script>
+    <script src="js/my-charts.js"></script>
+    <script src="js/chartMap.js"></script>
+    <script>
+      $("#back").click(() => {
+        history.back();
+      });
+    </script>
+  </body>
+</html>
